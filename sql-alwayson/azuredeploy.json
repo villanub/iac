@@ -64,7 +64,7 @@
     "sqlVmImageSku": {
       "type": "string",
       "defaultValue": "Enterprise"
-    }
+    },
      "ComputerOUPath": {
       "type": "string",
       "defaultValue": "OU=Servers,DC=Domain,DC=com"
