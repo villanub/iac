@@ -65,6 +65,10 @@
       "type": "string",
       "defaultValue": "Enterprise"
     }
+     "ComputerOUPath": {
+      "type": "string",
+      "defaultValue": "OU=Servers,DC=Domain,DC=com"
+    }
   },
   "variables": {
     "diagStorageAccountName": "[concat(uniquestring(resourceGroup().id), 'sqlvmdiag')]",
@@ -309,7 +313,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "Name": "[parameters('domainName')]",
-          "OUPath": "",
+          "OUPath": "[parameters('ComputerOUPath')]",
           "User": "[concat(parameters('domainName'), '\\', parameters('adminUserName'))]",
           "Restart": "true",
           "Options": "3"
